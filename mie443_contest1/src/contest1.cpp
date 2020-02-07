@@ -76,8 +76,8 @@ void drive(float xd, float yd) {
         rotation = angle - yaw;
     }
 
-    turn(rotation);
-    forward(distance);
+    // turn(rotation);
+    // forward(distance);
 
 }
 
@@ -89,21 +89,21 @@ float roatation_to_desired_angle(int N) {
     float rotation;
 
     for(int i = 1; i < N; i++) {
-        rotate(360/N);
+        // rotate(360/N);
         if(minLaserDist < min_distance) {
             min_distance = minLaserDist;
             min_angle = yaw;
         }
     }
 
-    if(min_ngle - yaw > 180) {
-        rotation = -(360-(angle - yaw));
+    if(min_angle - yaw > 180) {
+        rotation = -(360-(min_angle - yaw));
     }
     else if(min_angle - yaw < -180) {
-        rotation = -360 - (angle - yaw);
+        rotation = -360 - (min_angle - yaw);
     }
     else {
-        rotation = angle - yaw;
+        rotation = min_angle - yaw;
     }
     return rotation;
 }
@@ -134,26 +134,6 @@ int main(int argc, char **argv)
 
         ROS_INFO("Position: (%f,%f) Orientation: %f degrees Range: %f", posX, posY, RAD2DEG(yaw), minLaserDist);
 
-
-        forward();
-        roatate();
-        stop();
-
-        float min_distance = 1000;
-        float min_angle = 1000;
-        int N;
-
-        for(int i = 1; i < N; i++) {
-            rotate(360/N);
-            if(minLaserDist < min_distance) {
-                min_distance = minLaserDist;
-                min_angle = yaw;
-            }
-        }
-        forward();
-
-        rotate(10);
-        minLaserDist
 
         /*    
         //
