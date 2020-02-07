@@ -1,0 +1,23 @@
+{
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "",
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "includePath": [
+                "/opt/ros/kinetic/include/**",
+                "/home/nelson/catkin_ws/src/soccer_ws/external/darknet_ros/darknet_ros/include/**",
+                "/home/nelson/catkin_ws/src/soccer_ws/soccer_fieldline_detection/include/**",
+                "/home/nelson/catkin_ws/src/soccer_ws/soccer_geometry/include/**",
+                "/usr/include/**"
+            ],
+            "name": "ROS",
+            "intelliSenseMode": "gcc-x64",
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}
